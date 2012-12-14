@@ -11,10 +11,17 @@
 			padding: 0;
 			margin: 0;
 		}
-		#wrapper {
+		#wrapper1 {
 			height: 100%;
-			width: 100%;
+			width: 50%;
 			overflow: hidden;
+			float: left;
+		}
+		#wrapper2 {
+			height: 100%;
+			width: 50%;
+			overflow: hidden;
+			float: right;
 		}
 		body.lightGray, body.whitebg {
 			-webkit-transition: opacity 2s linear;
@@ -101,7 +108,21 @@
 </head>
 
 <body>
-	<div id="wrapper">
+
+	<div id="wrapper1">
+		<div id="topPadding"><br><br>Right-click on the background or the clock to customize.</div>
+		<div id="clock">
+			<span id="hour"></span><span id="colon" class="on">:</span><span id="minute"></span>
+			<!-- <span id="suffix"></span> -->
+		</div>
+		<div id="thedate">
+			<span id="day"></span>,
+			<span id="month"></span>
+			<span id="date"></span>
+		</div>
+	</div>
+
+	<div id="wrapper2">
 		<div id="topPadding"><br><br>Right-click on the background or the clock to customize.</div>
 		<div id="clock">
 			<span id="hour"></span><span id="colon" class="on">:</span><span id="minute"></span>
