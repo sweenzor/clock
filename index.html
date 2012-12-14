@@ -1,0 +1,119 @@
+
+<html>
+<head>
+  <title>New Tab</title>
+	<link href='http://fonts.googleapis.com/css?family=The+Girl+Next+Door|Rationale|Open+Sans:300' rel='stylesheet' type='text/css'>
+	<style>
+		body {
+			opacity: 0;
+			-webkit-touch-callout: none;
+			-webkit-user-select: none;
+			padding: 0;
+			margin: 0;
+		}
+		#wrapper {
+			height: 100%;
+			width: 100%;
+			overflow: hidden;
+		}
+		body.lightGray, body.whitebg {
+			-webkit-transition: opacity 2s linear;
+		}
+		body.loaded {
+			opacity: 1.0;
+		}
+		html, body, div {
+			cursor:default;
+		}
+		/*span { cursor:e-resize;	}*/
+		div#topPadding {
+			font-family: 'Helvetica Neue', sans-serif;
+			font-size: 125%;
+			height: 22%;
+			text-align: center;
+			opacity: 0;
+			-webkit-transition: opacity 1s linear;
+		}
+		div#topPadding.showTip {
+			opacity: 1.0;
+		}
+		div#clock, div#thedate {
+			vertical-align: 50%;
+			text-align: center;
+			font-size: 250px;
+			font-weight: 100;
+			line-height: 1em;
+		}
+		div#thedate {
+			font-size: 32px;
+			padding-top: 30px;
+			opacity: 0.4;
+			font-weight: 300;
+		}
+		span#suffix {
+			font-size: 32px;
+			opacity: 0.3;
+		}
+		span#colon {
+			opacity: 1;
+			vertical-align: 7%;
+			-webkit-transition: opacity 1s linear; 
+		}
+		span#colon.on {
+			opacity: 0.5;
+			-webkit-transition: opacity 1s linear; 
+		}
+		
+		
+		/* FONTS */
+		body.openSans 	{ font-family: 'Open Sans', 'Helvetica Neue', sans-serif; }
+		body.neue 			{ font-family: 'Helvetica Neue', sans-serif; }
+		body.georgia 		{ font-family: Georgia, sans-serif; }
+		body.quicksand 	{ font-family: Quicksand, sans-serif; }
+		body.girl 			{ font-family: 'The Girl Next Door', sans-serif; }
+		body.rational 	{ font-family: Rationale, sans-serif; }
+		body.georgia span#colon { 
+			vertical-align: 0; 
+		}
+
+		
+		/* BACKGROUND COLORS */
+		body.blackbg 		#wrapper { background-color: #000; }
+		body.whitebg 		#wrapper { background-color: #fff; }
+		body.darkGray 	#wrapper { background-color: #333; }
+		body.lightGray 	#wrapper { background-color: #eee; }
+		body.red 				#wrapper { background-color: #900; }
+		body.orange 		#wrapper { background-color: #f30; }
+		body.yellow 		#wrapper { background-color: #ff0; }
+		body.green 			#wrapper { background-color: #393; }
+		body.blue 			#wrapper { background-color: #039; }
+		body.purple 		#wrapper { background-color: #c0c; }
+
+
+		/* FONT COLOR */
+		body.white div#clock, body.white div#thedate, body.white div#topPadding {
+			color: rgba(255,255,255,.4);
+		}
+		body.black div#clock, body.black div#thedate, body.black div#topPadding {
+			color: rgba(0,0,0,.5);
+		}
+	</style>
+</head>
+
+<body>
+	<div id="wrapper">
+		<div id="topPadding"><br><br>Right-click on the background or the clock to customize.</div>
+		<div id="clock">
+			<span id="hour"></span><span id="colon" class="on">:</span><span id="minute"></span>
+			<!-- <span id="suffix"></span> -->
+		</div>
+		<div id="thedate">
+			<span id="day"></span>,
+			<span id="month"></span>
+			<span id="date"></span>
+		</div>
+	</div>
+
+	<script src="clock.js"></script>
+</body>
+</html>
