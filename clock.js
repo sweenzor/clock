@@ -190,9 +190,9 @@ function date() {
 		case 11: themonth = 'December'; break;
 	}
 
-	$("#day").innerText = theday;
-	$("#month").innerText = themonth;
-	$("#date").innerText = thedate;
+	day.innerText = theday;
+	month.innerText = themonth;
+	dadate.innerText = thedate;
 
 	// var thehour = currentTime.getHours();
 	// var suffix = "AM";
@@ -232,12 +232,28 @@ function blink() {
 
 // INIT
 function init() {
+
+
+	day = $("#day");
+	month = $("#month");
+	dadate = $("#date");
 	hour = $("#hour");
 	min = $("#minute");
 	colon = $("#colon");
 
 	date();
 	clock();
+
+	day = $("#day2");
+	month = $("#month2");
+	dadate = $("#date2");
+	hour = $("#hour2");
+	min = $("#minute2");
+	colon = $("#colon2");
+
+	date();
+	clock();
+
 	setInterval(blink, 1000);
 	addClass('loaded', body);
 	body.addEventListener('contextmenu', cycleOptions, false);
