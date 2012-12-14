@@ -190,9 +190,9 @@ function date() {
 		case 11: themonth = 'December'; break;
 	}
 
-	day.innerText = theday;
-	month.innerText = themonth;
-	dadate.innerText = thedate;
+	$("#day").innerText = theday;
+	$("#month").innerText = themonth;
+	$("#date").innerText = thedate;
 
 	// var thehour = currentTime.getHours();
 	// var suffix = "AM";
@@ -200,6 +200,47 @@ function date() {
 	// 	suffix = "PM";
 	// }
 	// $("#suffix").innerText = suffix;
+}
+
+function dateUTC() {
+	var currentTime = new Date();
+
+	var miliseconds = currentTime.getUTCSeconds() * 1000;
+	setTimeout(startClock, miliseconds);
+
+	var theday = currentTime.getUTCDay();
+	var thedate = currentTime.getUTCDate();
+	var themonth = currentTime.getUTCMonth();
+	
+	switch(theday) {
+		case 0: theday = 'Sunday'; break;
+		case 1: theday = 'Monday'; break;
+		case 2: theday = 'Tuesday'; break;
+		case 3: theday = 'Wednesday'; break;
+		case 4: theday = 'Thursday'; break;
+		case 5: theday = 'Friday'; break;
+		case 6: theday = 'Saturday'; break;
+	}
+
+	switch(themonth) {
+		case 0: themonth = 'January'; break;
+		case 1: themonth = 'February'; break;
+		case 2: themonth = 'March'; break;
+		case 3: themonth = 'April'; break;
+		case 4: themonth = 'May'; break;
+		case 5: themonth = 'June'; break;
+		case 6: themonth = 'July'; break;
+		case 7: themonth = 'August'; break;
+		case 8: themonth = 'September'; break;
+		case 9: themonth = 'October'; break;
+		case 10: themonth = 'November'; break;
+		case 11: themonth = 'December'; break;
+	}
+
+	$("#day2").innerText = theday;
+	$("#month2").innerText = themonth;
+	$("#date2").innerText = thedate;
+
 }
 
 function startClock() {
@@ -226,6 +267,15 @@ function clock() {
 	min.innerText = theminute;
 }
 
+function clockUTC() {
+	var currentTime = new Date();
+	var thehour = currentTime.getUTCHours();
+	var theminute = currentTime.getUTCMinutes();
+
+	hour.innerText = thehour;
+	min.innerText = theminute;
+}
+
 function blink() {
 	toggleClass("on", colon);
 }
@@ -233,10 +283,6 @@ function blink() {
 // INIT
 function init() {
 
-
-	day = $("#day");
-	month = $("#month");
-	dadate = $("#date");
 	hour = $("#hour");
 	min = $("#minute");
 	colon = $("#colon");
@@ -244,15 +290,12 @@ function init() {
 	date();
 	clock();
 
-	day = $("#day2");
-	month = $("#month2");
-	dadate = $("#date2");
 	hour = $("#hour2");
 	min = $("#minute2");
 	colon = $("#colon2");
 
-	date();
-	clock();
+	dateUTC();
+	clockUTC();
 
 	setInterval(blink, 1000);
 	addClass('loaded', body);
