@@ -202,11 +202,13 @@ function date() {
 	// $("#suffix").innerText = suffix;
 }
 
+var hour2, min2, colon2;
+
 function dateUTC() {
 	var currentTime = new Date();
 
 	var miliseconds = currentTime.getUTCSeconds() * 1000;
-	setTimeout(startClock, miliseconds);
+	setTimeout(startClockUTC, miliseconds);
 
 	var theday = currentTime.getUTCDay();
 	var thedate = currentTime.getUTCDate();
@@ -248,6 +250,11 @@ function startClock() {
 	setInterval(clock, 60000);
 }
 
+function startClockUTC() {
+	clockUTC();
+	setInterval(clockUTC, 60000);
+}
+
 function clock() {
 	var currentTime = new Date();
 	var thehour = currentTime.getHours();
@@ -272,32 +279,38 @@ function clockUTC() {
 	var thehour = currentTime.getUTCHours();
 	var theminute = currentTime.getUTCMinutes();
 
-	hour.innerText = thehour;
-	min.innerText = theminute;
+	if (theminute < 10) {
+		theminute = "0" + theminute
+	}
+
+	hour2.innerText = thehour;
+	min2.innerText = theminute;
 }
 
 function blink() {
 	toggleClass("on", colon);
 }
+function blink2() {
+	toggleClass("on", colon2);
+}
 
 // INIT
 function init() {
 
+	colon = $("#colon");
 	hour = $("#hour");
 	min = $("#minute");
-	colon = $("#colon");
-
 	date();
 	clock();
 
-	hour = $("#hour2");
-	min = $("#minute2");
-	colon = $("#colon2");
-
+	colon2 = $("#colon2");
+	hour2 = $("#hour2");
+	min2 = $("#minute2");
 	dateUTC();
 	clockUTC();
 
 	setInterval(blink, 1000);
+	setInterval(blink2, 1000);
 	addClass('loaded', body);
 	body.addEventListener('contextmenu', cycleOptions, false);
 	body.addEventListener('click', showTip, false);

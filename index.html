@@ -47,7 +47,7 @@
 		div#clock, div#thedate {
 			vertical-align: 50%;
 			text-align: center;
-			font-size: 250px;
+			font-size: 200px;
 			font-weight: 100;
 			line-height: 1em;
 		}
@@ -70,6 +70,16 @@
 			opacity: 0.5;
 			-webkit-transition: opacity 1s linear; 
 		}
+		span#colon2 {
+			opacity: 1;
+			vertical-align: 7%;
+			-webkit-transition: opacity 1s linear; 
+		}
+		span#colon2.on {
+			opacity: 0.5;
+			-webkit-transition: opacity 1s linear; 
+		}
+
 		
 		
 		/* FONTS */
@@ -125,7 +135,7 @@
 	<div id="wrapper2">
 		<div id="topPadding"><br><br>UTC</div>
 		<div id="clock">
-			<span id="hour2"></span><span id="colon" class="on">:</span><span id="minute2"></span>
+			<span id="hour2"></span><span id="colon2" class="on">:</span><span id="minute2"></span>
 			<!-- <span id="suffix"></span> -->
 		</div>
 		<div id="thedate">
