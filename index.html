@@ -11,18 +11,13 @@
 			padding: 0;
 			margin: 0;
 		}
-		#wrapper1 {
+		div.wrapper {
 			height: 100%;
 			width: 50%;
 			overflow: hidden;
-			float: left;
 		}
-		#wrapper2 {
-			height: 100%;
-			width: 50%;
-			overflow: hidden;
-			float: right;
-		}
+		#w1 { float: left; }
+		#w2 { float: right; }
 		body.lightGray, body.whitebg {
 			-webkit-transition: opacity 2s linear;
 		}
@@ -33,7 +28,7 @@
 			cursor:default;
 		}
 		/*span { cursor:e-resize;	}*/
-		div#topPadding1 {
+		div.topPadding {
 			font-family: 'Helvetica Neue', sans-serif;
 			font-size: 125%;
 			height: 22%;
@@ -41,18 +36,7 @@
 			opacity: 0;
 			-webkit-transition: opacity 1s linear;
 		}
-		div#topPadding1.showTip {
-			opacity: 1.0;
-		}
-		div#topPadding2 {
-			font-family: 'Helvetica Neue', sans-serif;
-			font-size: 125%;
-			height: 22%;
-			text-align: center;
-			opacity: 0;
-			-webkit-transition: opacity 1s linear;
-		}
-		div#topPadding2.showTip {
+		div.topPadding.showTip {
 			opacity: 1.0;
 		}
 		div#clock, div#thedate {
@@ -106,16 +90,16 @@
 
 		
 		/* BACKGROUND COLORS */
-		body.blackbg 		#wrapper { background-color: #000; }
-		body.whitebg 		#wrapper { background-color: #fff; }
-		body.darkGray 	#wrapper { background-color: #333; }
-		body.lightGray 	#wrapper { background-color: #eee; }
-		body.red 				#wrapper { background-color: #900; }
-		body.orange 		#wrapper { background-color: #f30; }
-		body.yellow 		#wrapper { background-color: #ff0; }
-		body.green 			#wrapper { background-color: #393; }
-		body.blue 			#wrapper { background-color: #039; }
-		body.purple 		#wrapper { background-color: #c0c; }
+		body.blackbg 	.wrapper { background-color: #000; }
+		body.whitebg 	.wrapper { background-color: #fff; }
+		body.darkGray 	.wrapper { background-color: #333; }
+		body.lightGray 	.wrapper { background-color: #eee; }
+		body.red 		.wrapper { background-color: #900; }
+		body.orange 	.wrapper { background-color: #f30; }
+		body.yellow 	.wrapper { background-color: #ff0; }
+		body.green 		.wrapper { background-color: #393; }
+		body.blue 		.wrapper { background-color: #039; }
+		body.purple 	.wrapper { background-color: #c0c; }
 
 
 		/* FONT COLOR */
@@ -130,8 +114,8 @@
 
 <body>
 
-	<div id="wrapper1">
-		<div id="topPadding1"><br><br>Local time</div>
+	<div class="wrapper" id="w1">
+		<div class="topPadding" id="tp2"><br><br>Local Time</div>
 		<div id="clock">
 			<span id="hour"></span><span id="colon" class="on">:</span><span id="minute"></span>
 			<!-- <span id="suffix"></span> -->
@@ -143,8 +127,8 @@
 		</div>
 	</div>
 
-	<div id="wrapper2">
-		<div id="topPadding2"><br><br>UTC</div>
+	<div class="wrapper" id="w2">
+		<div class="topPadding" id="tp1"><br><br>Server Time</div>
 		<div id="clock">
 			<span id="hour2"></span><span id="colon2" class="on">:</span><span id="minute2"></span>
 			<!-- <span id="suffix"></span> -->

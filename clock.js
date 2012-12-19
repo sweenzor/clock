@@ -60,15 +60,9 @@ function toggleClass(nameOfClass, element) {
 /* =================================================== */
 
 // Style options
-var fonts = ['neue', 'openSans', 'girl', 'rational', 'georgia'];
+var fonts = ['georgia', 'neue', 'openSans'];
 var bg = [ 
 	{bg:'darkGray',tint:'white'}, 
-	{bg:'red',tint:'white'}, 
-	{bg:'orange',tint:'black'}, 
-	{bg:'yellow',tint:'black'}, 
-	{bg:'green',tint:'black'}, 
-	{bg:'blue',tint:'white'}, 
-	{bg:'purple',tint:'black'}, 
 	{bg:'whitebg',tint:'black'},
 	{bg:'lightGray',tint:'black'}, 
 	{bg:'blackbg',tint:'white'} 
@@ -130,8 +124,7 @@ function cycleBg() {
 }
 
 function cycleOptions() {
-	removeClass('showTip', '#topPadding1');
-	removeClass('showTip', '#topPadding2');
+	removeClass('showTip', '#tp1');
 	if (event.target.nodeName == 'SPAN') {
 		cycleFont();
 	}
@@ -143,11 +136,9 @@ function cycleOptions() {
 }
 
 function showTip() {
-	addClass('showTip', '#topPadding1');
-	addClass('showTip', '#topPadding2');
+	addClass('showTip', '#tp1');
 	setTimeout( function() {
-		removeClass('showTip', '#topPadding1');
-		removeClass('showTip', '#topPadding2');
+		removeClass('showTip', '#tp1');
 	}, 6000);
 }
 
@@ -315,6 +306,6 @@ function init() {
 	setInterval(blink, 1000);
 	setInterval(blink2, 1000);
 	addClass('loaded', body);
-	//body.addEventListener('contextmenu', cycleOptions, false);
+	body.addEventListener('contextmenu', cycleOptions, false);
 	body.addEventListener('click', showTip, false);
 }
