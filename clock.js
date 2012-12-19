@@ -125,6 +125,7 @@ function cycleBg() {
 
 function cycleOptions() {
 	removeClass('showTip', '#tp1');
+	removeClass('showTip', '#tp2');
 	if (event.target.nodeName == 'SPAN') {
 		cycleFont();
 	}
@@ -137,8 +138,10 @@ function cycleOptions() {
 
 function showTip() {
 	addClass('showTip', '#tp1');
+	addClass('showTip', '#tp2');
 	setTimeout( function() {
 		removeClass('showTip', '#tp1');
+		removeClass('showTip', '#tp2');
 	}, 6000);
 }
 
