@@ -130,7 +130,8 @@ function cycleBg() {
 }
 
 function cycleOptions() {
-	removeClass('showTip', '#topPadding');
+	removeClass('showTip', '#topPadding1');
+	removeClass('showTip', '#topPadding2');
 	if (event.target.nodeName == 'SPAN') {
 		cycleFont();
 	}
@@ -142,9 +143,11 @@ function cycleOptions() {
 }
 
 function showTip() {
-	addClass('showTip', '#topPadding');
+	addClass('showTip', '#topPadding1');
+	addClass('showTip', '#topPadding2');
 	setTimeout( function() {
-		removeClass('showTip', '#topPadding');
+		removeClass('showTip', '#topPadding1');
+		removeClass('showTip', '#topPadding2');
 	}, 6000);
 }
 
@@ -312,6 +315,6 @@ function init() {
 	setInterval(blink, 1000);
 	setInterval(blink2, 1000);
 	addClass('loaded', body);
-	body.addEventListener('contextmenu', cycleOptions, false);
+	//body.addEventListener('contextmenu', cycleOptions, false);
 	body.addEventListener('click', showTip, false);
 }

@@ -33,7 +33,7 @@
 			cursor:default;
 		}
 		/*span { cursor:e-resize;	}*/
-		div#topPadding {
+		div#topPadding1 {
 			font-family: 'Helvetica Neue', sans-serif;
 			font-size: 125%;
 			height: 22%;
@@ -41,7 +41,18 @@
 			opacity: 0;
 			-webkit-transition: opacity 1s linear;
 		}
-		div#topPadding.showTip {
+		div#topPadding1.showTip {
+			opacity: 1.0;
+		}
+		div#topPadding2 {
+			font-family: 'Helvetica Neue', sans-serif;
+			font-size: 125%;
+			height: 22%;
+			text-align: center;
+			opacity: 0;
+			-webkit-transition: opacity 1s linear;
+		}
+		div#topPadding2.showTip {
 			opacity: 1.0;
 		}
 		div#clock, div#thedate {
@@ -120,7 +131,7 @@
 <body>
 
 	<div id="wrapper1">
-		<div id="topPadding"><br><br>Local time</div>
+		<div id="topPadding1"><br><br>Local time</div>
 		<div id="clock">
 			<span id="hour"></span><span id="colon" class="on">:</span><span id="minute"></span>
 			<!-- <span id="suffix"></span> -->
@@ -133,7 +144,7 @@
 	</div>
 
 	<div id="wrapper2">
-		<div id="topPadding"><br><br>UTC</div>
+		<div id="topPadding2"><br><br>UTC</div>
 		<div id="clock">
 			<span id="hour2"></span><span id="colon2" class="on">:</span><span id="minute2"></span>
 			<!-- <span id="suffix"></span> -->
